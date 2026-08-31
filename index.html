@@ -4,31 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contemplative West Michigan</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cinzel:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --teal-deep: #1a3a35;
-    --teal-mid: #2d6158;
-    --teal-soft: #4a8a7e;
-    --teal-pale: #c8ddd9;
-    --teal-faint: #edf4f2;
-    --parchment: #f7f3ec;
-    --parchment-dark: #e8e2d6;
-    --warm-dark: #2c2419;
-    --warm-mid: #6b5a44;
-    --gold: #b0853a;
-    --gold-soft: #d4a96a;
-    --serif: 'Cormorant Garamond', Georgia, serif;
-    --sans: 'Inter', system-ui, sans-serif;
+    --blue-deep:   #155476;
+    --blue-soft:   #B8CCD5;
+    --blue-mid:    #4a7a94;
+    --gold:        #C8A979;
+    --gold-dark:   #a08555;
+    --cream:       #FAF6EE;
+    --cream-dark:  #ede8de;
+    --warm-dark:   #2a2118;
+    --warm-mid:    #5a4e42;
+    --serif:       'Cormorant Garamond', Georgia, serif;
+    --display:     'Cinzel', Georgia, serif;
+    --sans:        'Inter', system-ui, sans-serif;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
     font-family: var(--sans);
-    background: var(--parchment);
+    background: var(--cream);
     color: var(--warm-dark);
     font-size: 16px;
     line-height: 1.7;
@@ -37,31 +36,25 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(247, 243, 236, 0.92);
+    background: rgba(250, 246, 238, 0.94);
     backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--parchment-dark);
+    border-bottom: 1px solid var(--cream-dark);
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2.5rem;
   }
-  .nav-brand {
-    font-family: var(--serif);
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--teal-deep);
-    letter-spacing: 0.02em;
-    text-decoration: none;
-  }
+  .nav-logo { height: 48px; width: auto; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
-    font-size: 0.85rem;
+    font-family: var(--display);
+    font-size: 0.72rem;
     font-weight: 400;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--warm-mid);
+    color: var(--blue-deep);
     text-decoration: none;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--teal-mid); }
+  .nav-links a:hover { color: var(--gold-dark); }
 
   /* HERO */
   .hero {
@@ -69,84 +62,63 @@
     display: flex; align-items: center; justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 7rem 2rem 4rem;
-    background: var(--parchment);
-    position: relative;
-    overflow: hidden;
+    padding: 8rem 2rem 5rem;
+    background: var(--cream);
   }
-  .hero-mandala {
-    width: min(480px, 90vw);
-    height: min(480px, 90vw);
-    opacity: 0.18;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
+  .hero-logo { width: min(440px, 80vw); height: auto; margin-bottom: 2.5rem; }
+  .hero-divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 2rem;
+    width: min(360px, 80vw);
+    justify-content: center;
   }
-  .hero-content { position: relative; z-index: 2; max-width: 680px; }
-  .hero-eyebrow {
-    font-family: var(--sans);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--teal-soft);
-    margin-bottom: 1.5rem;
-  }
-  .hero h1 {
+  .hero-divider-line { flex: 1; height: 1px; background: var(--gold); }
+  .hero-divider-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+  .hero-subtitle {
     font-family: var(--serif);
-    font-size: clamp(3rem, 7vw, 5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--teal-deep);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
-  }
-  .hero h1 em { font-style: italic; color: var(--teal-mid); }
-  .hero-tagline {
-    font-family: var(--serif);
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
     font-weight: 400;
     font-style: italic;
     color: var(--warm-mid);
-    margin-bottom: 2.5rem;
     max-width: 480px;
-    margin-left: auto; margin-right: auto;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
   }
   .hero-cta {
     display: inline-block;
-    padding: 0.8rem 2.2rem;
-    background: var(--teal-deep);
-    color: var(--parchment);
-    font-family: var(--sans);
-    font-size: 0.85rem;
+    padding: 0.85rem 2.4rem;
+    background: var(--blue-deep);
+    color: var(--cream);
+    font-family: var(--display);
+    font-size: 0.75rem;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     text-decoration: none;
     border-radius: 2px;
     transition: background 0.2s;
   }
-  .hero-cta:hover { background: var(--teal-mid); }
+  .hero-cta:hover { background: var(--blue-mid); }
 
   /* SECTIONS */
   section { padding: 5rem 2rem; }
   .container { max-width: 860px; margin: 0 auto; }
-  .container-narrow { max-width: 620px; margin: 0 auto; }
+  .container-narrow { max-width: 640px; margin: 0 auto; }
 
   .section-label {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
+    font-family: var(--display);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-dark);
     margin-bottom: 1rem;
   }
   h2 {
     font-family: var(--serif);
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 500;
-    color: var(--teal-deep);
+    color: var(--blue-deep);
     line-height: 1.2;
     margin-bottom: 1.5rem;
   }
@@ -154,120 +126,132 @@
   p { color: var(--warm-mid); margin-bottom: 1rem; }
   p:last-child { margin-bottom: 0; }
 
-  /* ABOUT / INTRO */
-  .intro { background: var(--teal-faint); }
-  .intro .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .intro-image {
-    display: flex; align-items: center; justify-content: center;
-  }
-  .intro-mandala-wrap {
-    width: 260px; height: 260px;
+  .divider { width: 60px; height: 1px; background: var(--gold); margin: 1.5rem 0 2rem; }
+  .divider-center { margin-left: auto; margin-right: auto; }
+
+  /* ABOUT */
+  .intro { background: #f0ece3; }
+  .intro .container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .intro-image { display: flex; align-items: center; justify-content: center; }
+  .intro-img-frame {
+    width: 280px; height: 280px;
     border-radius: 50%;
-    background: var(--teal-pale);
+    background: var(--blue-soft);
     display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
   }
+  .intro-img-frame img { width: 220px; height: auto; }
 
   /* GATHERINGS */
-  .gatherings { background: var(--parchment); }
-  .gatherings-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-  }
+  .gatherings { background: var(--cream); }
+  .gatherings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
   .gathering-card {
     padding: 2rem 1.5rem;
     background: white;
-    border: 1px solid var(--parchment-dark);
-    border-top: 3px solid var(--teal-soft);
-  }
-  .gathering-icon {
-    width: 40px; height: 40px;
-    margin-bottom: 1rem;
+    border: 1px solid var(--cream-dark);
+    border-top: 3px solid var(--gold);
   }
   .gathering-card h3 {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--teal-deep);
-    margin-bottom: 0.5rem;
+    font-family: var(--display);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-deep);
+    margin-bottom: 0.75rem;
   }
-  .gathering-card p { font-size: 0.9rem; }
+  .gathering-card p { font-size: 0.92rem; }
 
   /* PARTNERSHIP */
-  .partnership { background: var(--teal-deep); }
-  .partnership .section-label { color: var(--gold-soft); }
-  .partnership h2 { color: var(--teal-faint); }
-  .partnership p { color: var(--teal-pale); }
+  .partnership { background: var(--blue-deep); }
+  .partnership .section-label { color: var(--gold); }
+  .partnership h2 { color: var(--cream); }
+  .partnership p { color: var(--blue-soft); }
+  .partnership .divider { background: var(--gold); }
 
   /* VISION */
-  .vision { background: var(--parchment-dark); }
-  .vision-list {
-    list-style: none;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .vision-list li {
-    display: flex; gap: 1rem; align-items: flex-start;
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    color: var(--warm-mid);
-  }
-  .vision-list .bullet {
-    width: 8px; height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 0.45rem;
-  }
+  .vision { background: #f0ece3; }
+  .vision-list { list-style: none; margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+  .vision-list li { display: flex; gap: 1rem; align-items: flex-start; font-family: var(--serif); font-size: 1.15rem; color: var(--warm-mid); }
+  .vision-list .bullet { width: 7px; height: 7px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem; }
 
   /* JOIN */
-  .join {
-    background: var(--parchment);
-    text-align: center;
+  .join { background: var(--cream); text-align: center; }
+  .join p { max-width: 500px; margin: 0 auto 1rem; }
+
+  /* Mailchimp form — restyled to match CWM palette */
+  #mc_embed_shell { max-width: 480px; margin: 2rem auto 0; }
+  #mc_embed_signup { background: transparent; }
+  #mc_embed_signup form { padding: 0; }
+  #mc_embed_signup_scroll h2 { display: none; } /* we have our own heading */
+  #mc_embed_signup .indicates-required { display: none; }
+
+  #mc_embed_signup .mc-field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+    text-align: left;
   }
-  .join h2 { margin-bottom: 1rem; }
-  .join p { max-width: 500px; margin: 0 auto 2rem; }
-  .join-form {
-    display: flex; gap: 0.75rem; justify-content: center;
-    flex-wrap: wrap;
-    max-width: 480px;
-    margin: 0 auto;
+  #mc_embed_signup .mc-field-group label {
+    font-family: var(--display);
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    margin-bottom: 0.3rem;
   }
-  .join-form input {
-    flex: 1; min-width: 200px;
+  #mc_embed_signup .mc-field-group input {
     padding: 0.75rem 1rem;
-    border: 1px solid var(--parchment-dark);
+    border: 1px solid var(--cream-dark);
     background: white;
     font-family: var(--sans);
     font-size: 0.9rem;
     color: var(--warm-dark);
     outline: none;
     border-radius: 2px;
+    width: 100%;
+    transition: border-color 0.2s;
   }
-  .join-form input:focus { border-color: var(--teal-soft); }
-  .join-form button {
-    padding: 0.75rem 1.8rem;
-    background: var(--teal-deep);
-    color: var(--parchment);
-    font-family: var(--sans);
-    font-size: 0.85rem;
+  #mc_embed_signup .mc-field-group input:focus { border-color: var(--blue-mid); }
+
+  #mc_embed_signup #mc-embedded-subscribe {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 2rem;
+    background: var(--blue-deep);
+    color: var(--cream);
+    font-family: var(--display);
+    font-size: 0.75rem;
     font-weight: 400;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     border: none;
     border-radius: 2px;
     cursor: pointer;
     transition: background 0.2s;
+    margin-top: 0.5rem;
   }
-  .join-form button:hover { background: var(--teal-mid); }
+  #mc_embed_signup #mc-embedded-subscribe:hover { background: var(--blue-mid); }
+
+  #mc_embed_signup .optionalParent { margin-top: 0.5rem; }
+
+  /* success / error messages */
+  #mc_embed_signup #mce-success-response {
+    color: var(--blue-deep);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    padding: 1rem 0;
+  }
+  #mc_embed_signup #mce-error-response {
+    color: #a03030;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Mailchimp badge — keep it but make it subtle */
+  .refferal_badge { opacity: 0.4; margin-top: 0.5rem; }
+
   .donation-note {
     font-size: 0.82rem;
     color: var(--warm-mid);
@@ -278,120 +262,49 @@
   /* FOOTER */
   footer {
     background: var(--warm-dark);
-    color: var(--parchment-dark);
+    color: var(--cream-dark);
     text-align: center;
     padding: 2.5rem 2rem;
     font-size: 0.85rem;
   }
-  footer a { color: var(--teal-pale); text-decoration: none; }
-  footer .footer-brand {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--parchment);
-    margin-bottom: 0.5rem;
-  }
+  footer a { color: var(--blue-soft); text-decoration: none; }
+  footer img { height: 52px; width: auto; margin-bottom: 1rem; filter: brightness(0) invert(1) opacity(0.85); }
+  footer p { color: var(--cream-dark); margin-bottom: 0.4rem; }
 
   /* RESPONSIVE */
   @media (max-width: 700px) {
-    nav { padding: 1rem 1.2rem; }
+    nav { padding: 0.8rem 1.2rem; }
     .nav-links { gap: 1.2rem; }
     .intro .container { grid-template-columns: 1fr; gap: 2rem; }
     .intro-image { display: none; }
     .gatherings-grid { grid-template-columns: 1fr; }
   }
-
-  /* DIVIDER */
-  .divider {
-    width: 60px; height: 1px;
-    background: var(--gold);
-    margin: 2rem 0;
-  }
-  .center .divider { margin-left: auto; margin-right: auto; }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a class="nav-brand" href="#">Contemplative West Michigan</a>
+  <img class="nav-logo" src="CWM_logo.jpg" alt="Contemplative West Michigan"/>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#gatherings">Gatherings</a></li>
-    <li><a href="#partnership">Location</a></li>
+    <li><a href="#partnership">Partnership</a></li>
+    <li><a href="#vision">Vision</a></li>
     <li><a href="#join">Join</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Signature SVG mandala / labyrinth -->
-  <svg class="hero-mandala" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g fill="none" stroke="#1a3a35" stroke-width="1">
-      <!-- Labyrinthine rings -->
-      <circle cx="200" cy="200" r="190"/>
-      <circle cx="200" cy="200" r="170"/>
-      <circle cx="200" cy="200" r="150"/>
-      <circle cx="200" cy="200" r="130"/>
-      <circle cx="200" cy="200" r="110"/>
-      <circle cx="200" cy="200" r="90"/>
-      <circle cx="200" cy="200" r="70"/>
-      <circle cx="200" cy="200" r="50"/>
-      <circle cx="200" cy="200" r="30"/>
-      <!-- Radial spokes with breaks for labyrinth paths -->
-      <line x1="200" y1="10" x2="200" y2="50"/>
-      <line x1="200" y1="70" x2="200" y2="90"/>
-      <line x1="200" y1="110" x2="200" y2="130"/>
-      <line x1="200" y1="150" x2="200" y2="170"/>
-
-      <line x1="390" y1="200" x2="350" y2="200"/>
-      <line x1="330" y1="200" x2="310" y2="200"/>
-      <line x1="290" y1="200" x2="270" y2="200"/>
-      <line x1="250" y1="200" x2="230" y2="200"/>
-
-      <line x1="200" y1="390" x2="200" y2="350"/>
-      <line x1="200" y1="330" x2="200" y2="310"/>
-      <line x1="200" y1="290" x2="200" y2="270"/>
-      <line x1="200" y1="250" x2="200" y2="230"/>
-
-      <line x1="10" y1="200" x2="50" y2="200"/>
-      <line x1="70" y1="200" x2="90" y2="200"/>
-      <line x1="110" y1="200" x2="130" y2="200"/>
-      <line x1="150" y1="200" x2="170" y2="200"/>
-
-      <!-- Diagonal spokes -->
-      <line x1="65" y1="65" x2="79" y2="79"/>
-      <line x1="93" y1="93" x2="107" y2="107"/>
-      <line x1="121" y1="121" x2="135" y2="135"/>
-      <line x1="149" y1="149" x2="163" y2="163"/>
-
-      <line x1="335" y1="65" x2="321" y2="79"/>
-      <line x1="307" y1="93" x2="293" y2="107"/>
-      <line x1="279" y1="121" x2="265" y2="135"/>
-      <line x1="251" y1="149" x2="237" y2="163"/>
-
-      <line x1="335" y1="335" x2="321" y2="321"/>
-      <line x1="307" y1="307" x2="293" y2="293"/>
-      <line x1="279" y1="279" x2="265" y2="265"/>
-      <line x1="251" y1="251" x2="237" y2="237"/>
-
-      <line x1="65" y1="335" x2="79" y2="321"/>
-      <line x1="93" y1="307" x2="107" y2="293"/>
-      <line x1="121" y1="279" x2="135" y2="265"/>
-      <line x1="149" y1="251" x2="163" y2="237"/>
-
-      <!-- Center dot -->
-      <circle cx="200" cy="200" r="8" fill="#b0853a" stroke="none"/>
-      <circle cx="200" cy="200" r="4" fill="#1a3a35" stroke="none"/>
-    </g>
-  </svg>
-
-  <div class="hero-content">
-    <p class="hero-eyebrow">Grand Rapids, Michigan</p>
-    <h1>Contemplative<br><em>West Michigan</em></h1>
-    <p class="hero-tagline">A gathering place for those walking the contemplative journey — together.</p>
-    <a href="#join" class="hero-cta">Join us</a>
+  <img class="hero-logo" src="CWM_logo_large.png" alt="Contemplative West Michigan — Stillness · Presence · Community"/>
+  <div class="hero-divider">
+    <span class="hero-divider-line"></span>
+    <span class="hero-divider-dot"></span>
+    <span class="hero-divider-line"></span>
   </div>
+  <p class="hero-subtitle">A gathering place for those walking the contemplative journey in West Michigan — together.</p>
+  <a href="#join" class="hero-cta">Join us</a>
 </section>
 
 <!-- ABOUT -->
@@ -401,32 +314,13 @@
       <p class="section-label">Who we are</p>
       <h2>Walking the inward<br><em>path, together</em></h2>
       <div class="divider"></div>
-      <p>The spiritual life is life is not an individual endeavor. We grow and are transformed most effectively in community. 
-      <p>Contemplative West Michigan is a community for those drawn to the deeper dimensions of the spiritual life — contemplative reading, centering prayer, silence, and the slow work of inner transformation.</p>
-      <p>We gather monthly for communal reflection, support, and practice. Whether you've been on this path for decades or are just beginning to sense its pull, you are welcome here.</p>
+      <p>Contemplative West Michigan is a community for those drawn to the deeper dimensions of the spiritual life — centering prayer, contemplative reading, silence, and the slow work of inner transformation.</p>
+      <p>We gather monthly for reflection, learning, and shared practice. Whether you've been on this path for decades or are just beginning to sense its pull, you are welcome here.</p>
+      <p>Our meetings include a short talk or book discussion on a contemplative theme, time for conversation and fellowship, and a period of centering prayer or similar practice together.</p>
     </div>
     <div class="intro-image">
-      <div class="intro-mandala-wrap">
-        <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g fill="none" stroke="#2d6158" stroke-width="1.2">
-            <circle cx="90" cy="90" r="80"/>
-            <circle cx="90" cy="90" r="64"/>
-            <circle cx="90" cy="90" r="48"/>
-            <circle cx="90" cy="90" r="32"/>
-            <circle cx="90" cy="90" r="16"/>
-            <!-- Petals -->
-            <ellipse cx="90" cy="42" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8"/>
-            <ellipse cx="138" cy="90" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(90 90 90)"/>
-            <ellipse cx="90" cy="138" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(180 90 90)"/>
-            <ellipse cx="42" cy="90" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(270 90 90)"/>
-            <ellipse cx="90" cy="42" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(45 90 90)"/>
-            <ellipse cx="90" cy="42" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(135 90 90)"/>
-            <ellipse cx="90" cy="42" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(225 90 90)"/>
-            <ellipse cx="90" cy="42" rx="10" ry="26" fill="#c8ddd9" stroke="#4a8a7e" stroke-width="0.8" transform="rotate(315 90 90)"/>
-          </g>
-          <circle cx="90" cy="90" r="8" fill="#b0853a"/>
-          <circle cx="90" cy="90" r="4" fill="#1a3a35"/>
-        </svg>
+      <div class="intro-img-frame">
+        <img src="CWM_logo_large.png" alt=""/>
       </div>
     </div>
   </div>
@@ -438,38 +332,17 @@
     <p class="section-label">Our meetings</p>
     <h2>What to expect<br><em>when we gather</em></h2>
     <div class="divider"></div>
-    <p>We will meet monthly at a time to be determined.</p>
-    <p>Each monthly gathering weaves together three strands: reflection, discussion, and practice.</p>
-
+    <p style="max-width:560px">Each monthly gathering weaves together three strands. Come for one, come for all — the rhythm is gentle and unhurried.</p>
     <div class="gatherings-grid">
       <div class="gathering-card">
-        <svg class="gathering-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="6" y="8" width="28" height="26" rx="2" stroke="#2d6158" stroke-width="1.2"/>
-          <line x1="6" y1="14" x2="34" y2="14" stroke="#2d6158" stroke-width="1.2"/>
-          <line x1="12" y1="20" x2="28" y2="20" stroke="#b0853a" stroke-width="1.2"/>
-          <line x1="12" y1="25" x2="24" y2="25" stroke="#b0853a" stroke-width="1.2"/>
-          <circle cx="10" cy="6" r="2.5" fill="#2d6158"/>
-          <circle cx="30" cy="6" r="2.5" fill="#2d6158"/>
-        </svg>
-        <h3>Reflection</h3>
+        <h3>Learning</h3>
         <p>A book discussion or short talk exploring a contemplative theme — from the Desert Fathers to contemporary teachers like Thomas Keating or Cynthia Bourgeault.</p>
       </div>
       <div class="gathering-card">
-        <svg class="gathering-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="20" cy="16" r="7" stroke="#2d6158" stroke-width="1.2"/>
-          <circle cx="9" cy="28" r="5" stroke="#2d6158" stroke-width="1.2"/>
-          <circle cx="31" cy="28" r="5" stroke="#2d6158" stroke-width="1.2"/>
-          <line x1="14" y1="27" x2="26" y2="27" stroke="#b0853a" stroke-width="1.2"/>
-        </svg>
-        <h3>Discussion</h3>
-        <p>Time for discussion and conversation, sharing the joys and struggles of the inner life, and the simple gift of being in community with others who understand the journey.</p>
+        <h3>Fellowship</h3>
+        <p>Time for open conversation, sharing the joys and struggles of the inner life, and the simple gift of being in community with others who understand the journey.</p>
       </div>
       <div class="gathering-card">
-        <svg class="gathering-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="20" cy="20" r="14" stroke="#2d6158" stroke-width="1.2"/>
-          <circle cx="20" cy="20" r="8" stroke="#4a8a7e" stroke-width="1"/>
-          <circle cx="20" cy="20" r="3" fill="#b0853a"/>
-        </svg>
         <h3>Practice</h3>
         <p>A shared period of centering prayer or similar contemplative practice — sitting together in the silence that is beyond words, resting in God's presence.</p>
       </div>
@@ -483,30 +356,86 @@
     <p class="section-label">Where we meet</p>
     <h2>In partnership with the<br><em>Dominican Center</em></h2>
     <div class="divider"></div>
-    <p>We are grateful to partner with the Dominican Center for Spirituality in Grand Rapids. The Center brings a deep tradition of contemplative practice, a trusted reputation in the spiritual community, and a beautiful, intimate space for gatherings.</p>
+    <p>We are grateful to partner with the Dominican Center for Spirituality in Grand Rapids. The Center brings a deep tradition of contemplative practice, a trusted reputation in the spiritual community, and a beautiful, intimate space for gatherings of up to 25.</p>
+    <p>Our meetings are free to attend and supported by the generosity of those who come. We believe the contemplative journey should never be gated by cost.</p>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision" id="vision">
+  <div class="container">
+    <p class="section-label">Where we're headed</p>
+    <h2>Growing into<br><em>something more</em></h2>
+    <div class="divider"></div>
+    <p style="max-width:560px">We begin simply — a monthly gathering. But the hope is larger: a genuine community of practice, growing organically over time.</p>
+    <ul class="vision-list">
+      <li><span class="bullet"></span><span>A leadership team drawn from the community itself</span></li>
+      <li><span class="bullet"></span><span>A newsletter for reflection, resources, and community news</span></li>
+      <li><span class="bullet"></span><span>Annual silent retreats and days of recollection</span></li>
+      <li><span class="bullet"></span><span>A home for those navigating the contemplative path in West Michigan</span></li>
+    </ul>
   </div>
 </section>
 
 <!-- JOIN -->
 <section class="join" id="join">
-  <div class="container-narrow center">
+  <div class="container-narrow">
     <p class="section-label">Get involved</p>
     <h2>Take the first<br><em>step</em></h2>
-    <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
-    <p>Leave your name and email and we'll let you know about our first gathering — no commitment required, just curiosity.</p>
-    <div class="join-form">
-      <input type="text" placeholder="Your name" aria-label="Your name"/>
-      <input type="email" placeholder="Your email" aria-label="Your email"/>
-      <button type="button">Stay in touch</button>
+    <div class="divider divider-center"></div>
+    <p>Leave your name and email below and we'll keep you informed about gatherings, news, and reflections from the CWM community.</p>
+
+    <!-- Mailchimp signup form -->
+    <div id="mc_embed_shell">
+      <div id="mc_embed_signup">
+        <form action="https://contemplativewestmichigan.us15.list-manage.com/subscribe/post?u=92ebc192415649e15e6589851&amp;id=78f36ec914&amp;f_id=006387e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+          <div id="mc_embed_signup_scroll">
+            <h2>Sign up for the CWM newsletter</h2>
+            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+            <div class="mc-field-group">
+              <label for="mce-FNAME">First Name</label>
+              <input type="text" name="FNAME" class="text" id="mce-FNAME" value="">
+            </div>
+            <div class="mc-field-group">
+              <label for="mce-LNAME">Last Name</label>
+              <input type="text" name="LNAME" class="text" id="mce-LNAME" value="">
+            </div>
+            <div class="mc-field-group">
+              <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+              <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
+            </div>
+            <div id="mce-responses" class="clear foot">
+              <div class="response" id="mce-error-response" style="display: none;"></div>
+              <div class="response" id="mce-success-response" style="display: none;"></div>
+            </div>
+            <!-- honeypot — do not remove -->
+            <div aria-hidden="true" style="position: absolute; left: -5000px;">
+              <input type="text" name="b_92ebc192415649e15e6589851_78f36ec914" tabindex="-1" value="">
+            </div>
+            <div class="optionalParent">
+              <div class="clear foot">
+                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Join the community">
+                <p style="margin: 0.75rem auto 0; text-align: center;">
+                  <a href="http://eepurl.com/OHIf3-9xKw" title="Mailchimp - email marketing made easy and fun">
+                    <img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 150px; height: auto; display: inline-block;">
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
+
+    <p class="donation-note">Our gatherings are free. If you'd like to support the work, donations are always welcome.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p class="footer-brand">Contemplative West Michigan</p>
-  <p>In partnership with the <a href="https://www.grdominicans.org">Dominican Center for Spirituality</a>, Grand Rapids, MI &nbsp;·&nbsp; <a href="mailto:cwm@contemplativewestmichigan.org">Contact us</a></p>
-  <p style="font-size:0.78rem; opacity:0.8;">This first draft of the CWM website was created with the assistance of the Claude LLM.</p>
+  <img src="CWM_logo_large.png" alt="Contemplative West Michigan"/>
+  <p>Grand Rapids, Michigan &nbsp;·&nbsp; In partnership with the <a href="#">Dominican Center for Spirituality</a></p>
+  <p style="margin-top:1rem; font-size:0.78rem; opacity:0.6;">© 2025 Contemplative West Michigan. All are welcome.</p>
 </footer>
 
 </body>
