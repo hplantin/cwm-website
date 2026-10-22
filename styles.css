@@ -228,17 +228,43 @@ p:last-child { margin-bottom: 0; }
   color: var(--blue-deep);
   line-height: 1.1;
 }
+.event-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.4rem;
+}
 .event-info h3 {
   font-family: var(--serif);
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--blue-deep);
-  margin-bottom: 0.4rem;
   line-height: 1.3;
 }
+.event-cost {
+  flex-shrink: 0;
+  font-family: var(--display);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.65rem;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.event-cost-free { background: var(--cream-dark); color: var(--warm-mid); }
+.event-cost-paid { background: transparent; border: 1px solid var(--gold); color: var(--gold-dark); }
 .event-meta {
   font-size: 0.85rem;
   color: var(--warm-mid);
+  margin-bottom: 0.3rem;
+}
+.event-recurrence {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--warm-mid);
+  opacity: 0.85;
   margin-bottom: 0.3rem;
 }
 .event-host {
