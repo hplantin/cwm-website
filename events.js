@@ -5,7 +5,9 @@
 //   "date": "2026-11-08",            // required, YYYY-MM-DD — the event's date
 //   "time": "9:00 AM – 3:00 PM",     // optional
 //   "title": "Day of Recollection",  // required
-//   "location": "Dominican Center, Grand Rapids", // optional
+//   "location": "Dominican Center, Grand Rapids", // optional — may include a
+//                                                  // simple link, e.g.
+//                                                  // "<a href=\"https://...\">Join online</a>"
 //   "host": "Contemplative Outreach",             // optional
 //   "description": "A short description.",        // optional
 //   "url": "https://example.org/event",            // optional
@@ -146,6 +148,22 @@
     return text + ' · through ' + untilStr;
   }
 
+  // Appends a " · "-separated part to a meta <p>. When isHTML is true the
+  // content is inserted as markup (used only for the trusted, self-authored
+  // "location" field, so a value like a Zoom join link renders as a link).
+  function appendMetaPart(meta, content, isHTML) {
+    if (meta.childNodes.length > 0) {
+      meta.appendChild(document.createTextNode(' · '));
+    }
+    if (isHTML) {
+      var span = document.createElement('span');
+      span.innerHTML = content;
+      meta.appendChild(span);
+    } else {
+      meta.appendChild(document.createTextNode(content));
+    }
+  }
+
   function showFallback() {
     container.innerHTML =
       '<div class="events-placeholder">' +
@@ -217,12 +235,14 @@
         }
         info.appendChild(titleRow);
 
-        var metaParts = [full];
-        if (raw.time) metaParts.push(raw.time);
-        if (raw.location) metaParts.push(raw.location);
         var meta = document.createElement('p');
         meta.className = 'event-meta';
-        meta.textContent = metaParts.join(' · ');
+        appendMetaPart(meta, full, false);
+        if (raw.time) appendMetaPart(meta, raw.time, false);
+        // location may contain a simple link (e.g. a Zoom join link), so it's
+        // inserted as HTML rather than escaped text — this field is edited
+        // directly by the site owner, never by site visitors.
+        if (raw.location) appendMetaPart(meta, raw.location, true);
         info.appendChild(meta);
 
         var recurrence = recurrenceLabel(raw, occurrence);

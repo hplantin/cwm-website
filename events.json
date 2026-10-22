@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "date": "2026-10-27",
+    "time": "12:00pm - 12:30pm EST",
+    "title": "Centering Prayer online (weekly)",
+    "location": "<a href=\"https://us02web.zoom.us/j/87690712965?jst=1\">Join Online</a>",
+    "host": "Esther Yff-Prins",
+    "description": "Centering prayer online, via Zoom. Esther arrives at 11:50 to greet participants.",
+    "url": "https://www.grdominicans.org/program-retreat/centering-prayer/",
+    "cost": "Free",
+    "repeat": { "frequency": "weekly", "until": "2027-05-31" }
+  }
+]
