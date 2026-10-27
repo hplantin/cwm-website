@@ -10,4 +10,15 @@
     "cost": "Free",
     "repeat": { "frequency": "weekly", "until": "2027-05-31" }
   }
+{
+    "date": "2026-11-15",
+    "time": "3:00 PM – 4:30 PM",
+    "title": "Contemplative Living in Today's World",
+    "location": "Dominican Center, 1700 Fulton St. E, Grand Rapids, MI",
+    "host": "Patrick Bishop [<a href='https://www.67happydog.com/blog'>blog</a>]",
+    "description": "\"date\" is the FIRST such occurrence (the 1st Monday of Nov 2026) — that same week-of-month + weekday repeats automatically every month until the \"until\" date below.",
+    "url": "https://www.grdominicans.org/all-events/?event=42149"
+    "cost": "Free",
+    "repeat": { "frequency": "monthly", "until": "2028-05-30" }
+  }
 ]
