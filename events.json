@@ -20,5 +20,16 @@
     "url": "https://www.grdominicans.org/all-events/?event=42149",
     "cost": "Free",
     "repeat": { "frequency": "monthly", "until": "2028-05-30" }
+  },
+  {
+    "date": "2026-10-27",
+    "time": "7:00 PM – 8:30 PM",
+    "title": "Centering Prayer, in person (weekly)",
+    "location": "Catholic Information Center, close to St. Andrews Cathedral",
+    "host": "Vince Galluch (vgalluch@att.net)",
+    "description": "Our meetings start with personal prayers, then we Center for 20 minutes. After a short break, we typically watch a short video related to Centering or Contemplative prayer. The balance of the meeting time is spent discussing the video.",
+    "url": "",
+    "cost": "Free",
+    "repeat": { "frequency": "weekly", "until": "2027-05-31" }
   }
 ]
