@@ -8,7 +8,8 @@
 //   "location": "Dominican Center, Grand Rapids", // optional — may include a
 //                                                  // simple link, e.g.
 //                                                  // "<a href=\"https://...\">Join online</a>"
-//   "host": "Contemplative Outreach",             // optional
+//   "host": "Contemplative Outreach",             // optional — may include a
+//                                                  // simple link, like location
 //   "description": "A short description.",        // optional
 //   "url": "https://example.org/event",            // optional
 //   "cost": "Free"                                 // optional — "Free" or e.g. "$10"
@@ -151,6 +152,7 @@
   // Appends a " · "-separated part to a meta <p>. When isHTML is true the
   // content is inserted as markup (used only for the trusted, self-authored
   // "location" field, so a value like a Zoom join link renders as a link).
+// The "host" field is handled the same way where it is rendered below.
   function appendMetaPart(meta, content, isHTML) {
     if (meta.childNodes.length > 0) {
       meta.appendChild(document.createTextNode(' · '));
@@ -256,7 +258,12 @@
         if (raw.host) {
           var host = document.createElement('p');
           host.className = 'event-host';
-          host.textContent = 'Hosted by ' + raw.host;
+          // like location, host may contain a simple link (e.g. a blog or
+          // mailto: link) — trusted, owner-edited content, inserted as HTML.
+          host.appendChild(document.createTextNode('Hosted by '));
+          var hostName = document.createElement('span');
+          hostName.innerHTML = raw.host;
+          host.appendChild(hostName);
           info.appendChild(host);
         }
 
