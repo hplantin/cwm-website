@@ -152,7 +152,7 @@
   // Appends a " · "-separated part to a meta <p>. When isHTML is true the
   // content is inserted as markup (used only for the trusted, self-authored
   // "location" field, so a value like a Zoom join link renders as a link).
-// The "host" field is handled the same way where it is rendered below.
+  // The "host" field is handled the same way where it is rendered below.
   function appendMetaPart(meta, content, isHTML) {
     if (meta.childNodes.length > 0) {
       meta.appendChild(document.createTextNode(' · '));
