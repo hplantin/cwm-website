@@ -21,3 +21,9 @@ Gemfile.lock
 *.swp
 *.swo
 *~
+
+# macOS Finder metadata
+.DS_Store
+
+# Local scratch file, not part of the site
+event-examples.json
