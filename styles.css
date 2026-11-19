@@ -66,6 +66,15 @@ nav {
 }
 .hero-divider-line { flex: 1; height: 1px; background: var(--gold); }
 .hero-divider-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.hero-poem { display: flex; flex-direction: column; align-items: center; }
+.hero-poem-title {
+  font-family: var(--display);
+  font-size: clamp(0.75rem, 1.6vw, 0.9rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin-bottom: 1.2rem;
+}
 .hero-subtitle {
   font-family: var(--serif);
   font-size: clamp(1.1rem, 2.5vw, 1.45rem);
